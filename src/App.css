@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+ul li:hover {
+  background: #f5eff1;
+}
+
+.noPadding {
+  padding-left: 0px !important;
+}
