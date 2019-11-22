@@ -54,9 +54,9 @@ class App extends React.Component {
               To Do List
             </h3>
             <hr />
-            <form>
-              <div class="row">
-                <div class="col-9">
+            <form className="text-center">
+              <div className="row text-center">
+                <div className="col-9">
                   <input
                     type="text"
                     name="newTask"
@@ -66,13 +66,13 @@ class App extends React.Component {
                     className="form-control"
                   />
                 </div>
-                <div class="col-3 text-right noPadding">
+                <div className="col-3 text-left noPadding">
                   <button
                     type="submit"
                     onClick={this.handleSubmit}
                     className="btn btn-secondary"
                   >
-                    Add new Task!
+                    Add!
                   </button>
                 </div>
               </div>
