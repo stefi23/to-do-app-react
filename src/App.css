@@ -28,3 +28,7 @@ ul li:hover {
 .noPadding {
   padding-left: 0px !important;
 }
+
+.underline {
+  text-decoration: line-through;
+}

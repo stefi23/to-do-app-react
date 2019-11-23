@@ -5,9 +5,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDoList: ["Wake up!", "Brush teeth!", "Code"],
-      newTask: "",
-      done: false
+      toDoList: [
+        ["Wake up!", ""],
+        ["Brush teeth", ""],
+        ["Code", ""]
+      ],
+      newTask: ""
     };
   }
 
@@ -22,7 +25,7 @@ class App extends React.Component {
     console.log("pressed");
     event.preventDefault();
     let list = [...this.state.toDoList];
-    list.push(this.state.newTask);
+    list.push([this.state.newTask, ""]);
     this.setState({
       toDoList: list,
       newTask: ""
@@ -38,25 +41,61 @@ class App extends React.Component {
     });
   };
 
-  completedTask = () => {
+  completedTask = (index, event) => {
     console.log("checked");
+    console.log("index: ", index);
+    let doneTask = [...this.state.toDoList];
+    console.log("array at index: ", doneTask[index]);
+    console.log("all array: ", doneTask);
+    // console.log(doneTask[index][1]);
+    if (doneTask[index][1] === "") {
+      doneTask[index][1] = "underline";
+      console.log("should be underline ", doneTask[index][1]);
+      return doneTask[index][1];
+    } else {
+      doneTask[index][1] = "";
+      console.log("should be empty ", doneTask[index][1]);
+    }
+
     this.setState({
-      done: true
+      toDoList: doneTask
     });
+    // doneTask[index][1] = "hello";
+    // doneTask[index][1] = doneTask[index][1] === "underline" ? "" : "underline";
+
+    // this.setState({
+    //   completed: true,
+    //   toDoList: doneTask
+    // });
   };
+  // this.setState({
+  //   done: true
+  // });
+
+  // completedTask = (index, event) => {
+  //   let done = [...this.state.toDoList];
+  // done[index][1] = done[index][1] === 'underline' ? '' : 'underline';
+  // console.log(done[index]);
+  // this.setState({
+  //   done: true,
+  //   toDoList: done,
+  //   class: 'underline'
+  //   });
+  // };
 
   render() {
     return (
       <div className="App">
         <div className="row">
           <div className="text-center col-8 offset-2 mt-3 bg-danger p-3 rounded">
-            <h3 style={{ color: "silver" }} className="mb-4">
+            <h3 style={{ color: "white" }} className="mb-4">
               To Do List
             </h3>
+            <h1 className="underline">test</h1>
             <hr />
             <form className="text-center">
               <div className="row text-center">
-                <div className="col-9">
+                <div className="col-6 offset-2">
                   <input
                     type="text"
                     name="newTask"
@@ -85,15 +124,17 @@ class App extends React.Component {
             <ul className="list-group">
               {this.state.toDoList.map((task, index) => (
                 <li
-                  className="list-group-item float-left"
+                  className={`list-group-item float-left ${task[1]}`}
+                  // className={`list-group-item float-left ${task[1]}`}
+                  // className={`${task[1]} list-group-item float-left `}
                   key={index}
-                  onClick={this.completedTask}
+                  // onClick={this.completedTask}
                 >
                   {task}
                   <input
                     type="checkbox"
-                    onChange={this.Taskchecked}
                     className="loat-left"
+                    onChange={e => this.completedTask(index, e)}
                   />
                 </li>
               ))}
