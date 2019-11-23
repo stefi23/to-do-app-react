@@ -51,10 +51,10 @@ class App extends React.Component {
     if (doneTask[index][1] === "") {
       doneTask[index][1] = "underline";
       console.log("should be underline ", doneTask[index][1]);
-      return doneTask[index][1];
+      // return doneTask[index][1];
     } else {
       doneTask[index][1] = "";
-      console.log("should be empty ", doneTask[index][1]);
+      // console.log("should be empty ", doneTask[index][1]);
     }
 
     this.setState({
@@ -109,7 +109,7 @@ class App extends React.Component {
                   key={index}
                   // onClick={this.completedTask}
                 >
-                  {task}
+                  {task[0]}
                   <input
                     type="checkbox"
                     className="loat-left"
