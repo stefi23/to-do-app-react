@@ -60,28 +60,7 @@ class App extends React.Component {
     this.setState({
       toDoList: doneTask
     });
-    // doneTask[index][1] = "hello";
-    // doneTask[index][1] = doneTask[index][1] === "underline" ? "" : "underline";
-
-    // this.setState({
-    //   completed: true,
-    //   toDoList: doneTask
-    // });
   };
-  // this.setState({
-  //   done: true
-  // });
-
-  // completedTask = (index, event) => {
-  //   let done = [...this.state.toDoList];
-  // done[index][1] = done[index][1] === 'underline' ? '' : 'underline';
-  // console.log(done[index]);
-  // this.setState({
-  //   done: true,
-  //   toDoList: done,
-  //   class: 'underline'
-  //   });
-  // };
 
   render() {
     return (
