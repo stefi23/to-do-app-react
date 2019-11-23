@@ -6,9 +6,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       toDoList: [
-        ["Wake up!", ""],
-        ["Brush teeth", ""],
-        ["Code", ""]
+        ["Drink coffee", ""],
+        ["Eat cake", ""],
+        ["Dance", ""]
       ],
       newTask: ""
     };
@@ -70,7 +70,7 @@ class App extends React.Component {
             <h3 style={{ color: "white" }} className="mb-4">
               To Do List
             </h3>
-            <h1 className="underline">test</h1>
+            {/* <h1 className="underline">test</h1> */}
             <hr />
             <form className="text-center">
               <div className="row text-center">
