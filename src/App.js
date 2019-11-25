@@ -89,6 +89,7 @@ class App extends React.Component {
                     type="submit"
                     onClick={this.handleSubmit}
                     className="btn btn-secondary"
+                    disabled={this.state.newTask === ""}
                   >
                     Add!
                   </button>
@@ -107,7 +108,7 @@ class App extends React.Component {
                   // className={`list-group-item float-left ${task[1]}`}
                   // className={`${task[1]} list-group-item float-left `}
                   key={index}
-                  // onClick={this.completedTask}
+                  onClick={e => this.completedTask(index, e)}
                 >
                   {task[0]}
                   <input
