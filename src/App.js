@@ -64,9 +64,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App centered">
         <div className="row">
-          <div className="text-center col-8 offset-2 mt-3 bg-danger p-3 rounded">
+          <div className="text-center col-12 mt-3 bg-danger p-3 rounded">
             <h3 style={{ color: "white" }} className="mb-4">
               To Do List
             </h3>
@@ -100,7 +100,7 @@ class App extends React.Component {
         </div>
 
         <div className="row">
-          <div className="col-8 offset-2 p-3 bg-info rounded">
+          <div className="col-12  p-3 bg-info rounded">
             <ul className="list-group">
               {this.state.toDoList.map((task, index) => (
                 <li
@@ -111,11 +111,11 @@ class App extends React.Component {
                   onClick={e => this.completedTask(index, e)}
                 >
                   {task[0]}
-                  <input
+                  {/* <input
                     type="checkbox"
                     className="loat-left"
                     onChange={e => this.completedTask(index, e)}
-                  />
+                  /> */}
                 </li>
               ))}
             </ul>
