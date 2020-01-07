@@ -72,30 +72,32 @@ class App extends React.Component {
             </h3>
             {/* <h1 className="underline">test</h1> */}
             <hr />
-            <form className="text-center">
-              <div className="row text-center">
-                <div className="col-6 offset-2">
-                  <input
-                    type="text"
-                    name="newTask"
-                    value={this.state.newTask}
-                    placeholder="Add New Task"
-                    onChange={this.handleChange}
-                    className="form-control"
-                  />
+            <div className="d-flex align-items-center">
+              <form className="text-center">
+                <div className="row text-center">
+                  <div className="col-8">
+                    <input
+                      type="text"
+                      name="newTask"
+                      value={this.state.newTask}
+                      placeholder="Add New Task"
+                      onChange={this.handleChange}
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-4 text-left noPadding">
+                    <button
+                      type="submit"
+                      onClick={this.handleSubmit}
+                      className="btn btn-secondary"
+                      disabled={this.state.newTask === ""}
+                    >
+                      Add!
+                    </button>
+                  </div>
                 </div>
-                <div className="col-3 text-left noPadding">
-                  <button
-                    type="submit"
-                    onClick={this.handleSubmit}
-                    className="btn btn-secondary"
-                    disabled={this.state.newTask === ""}
-                  >
-                    Add!
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
 

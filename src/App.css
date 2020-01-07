@@ -23,6 +23,7 @@
 
 ul li:hover {
   background: #f5eff1;
+  cursor: pointer;
 }
 
 .noPadding {
